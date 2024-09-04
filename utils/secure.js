@@ -1,11 +1,12 @@
 const bcryptjs = require("bcryptjs");
 
-const genHash = (text)=> {
-return bcryptjs.hashSync(text, Number(process.env.SALT_ROUND));
+const genHash= (text) => {
+    return bcryptjs.hashSync(text, Number(process.env.SALT_ROUND))
 };
 
-const verifyHash = (text, hashText) => {
-return bcryptjs.compareSync(text, hashText);
+
+const compareHash = (text, hashtext) => {
+    return bcryptjs.compareSync(text, hashtext);
 };
 
-module.exports= {genHash, verifyHash}
+module.exports= {genHash, compareHash};
